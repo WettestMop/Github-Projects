@@ -19,3 +19,9 @@ body {
   margin-top: -50px;
   margin-left: -120px;
 }
+
+.rainbow {
+  background-image: linear-gradient(to left, red, orange, yellow, green, indigo, violet);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
