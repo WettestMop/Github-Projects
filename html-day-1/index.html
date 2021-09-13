@@ -3,20 +3,70 @@
   href="styles.css">
 
 
+
   <style>
-  h1 {text-align: center;}
+  h1 {
+    text-align: center;
+    font-size: 60px;
+  }
   body {text-align: center;}
+  .button {
+    border: black;
+    border-radius: 3px;
+    color: red;
+    }
+  body {
+    background-image: url('backgrounds/background2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
   </style>
+  <body onload="startTime()">
+
+
+
+
+
+
+
+
+  <script>
+  function startTime() {
+    const today = new Date();
+
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s + " " + ampm;
+    setTimeout(startTime, 1000);
+  }
+
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+  </script>
 
 
 
   <title>Webpage</title>
   <div class="centertitle">
-    <h1>Hello World!</h1>
+    <h1 id='txt'> </h1>
   </div>
   <div class="earth"></div>
 
   <div class="center">
-    <body>What a nice day it is</body>
+    <script>
+    if ampm = "AM";
+      document.getElementById('txt1').innerHTML =  "Good Morning!";
+    if ampm = "PM"
+      document.getElementById('txt1').innerHTML =  "Good Afternoon!";
+
+
+    </script>
+    <p> </p>
   </body>
 </html>
