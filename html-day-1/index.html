@@ -7,9 +7,17 @@
   <style>
   h1 {
     text-align: center;
-    font-size: 60px;
+    font-size: 70px;
+    font-family: "Garamond";
   }
-  body {text-align: center;}
+
+  p {
+    text-align: center;
+    font-size: 30px;
+    font-family: "Garamond";
+    font-style: strong;
+  }
+
   .button {
     border: black;
     border-radius: 3px;
@@ -34,21 +42,48 @@
   function startTime() {
     const today = new Date();
 
-    let h = today.getHours();
+    var h = today.getHours();
+    var hh = today.getHours();
     let m = today.getMinutes();
     let s = today.getSeconds();
-    var ampm = h >= 12 ? 'PM' : 'AM';
+    if (h >= 12) {
+      ampm = "PM";
+
+    }
+    if (h <= 12) {
+      ampm = "AM";
+    }
     m = checkTime(m);
     s = checkTime(s);
+
+
+    if (ampm = "AM") {
+      document.getElementById('txt1').innerHTML =  "Good Morning!";
+    } else {
+      document.getElementById('txt1').innerHTML =  "Good Afternoon!";
+    }
+
+
+    if (h >= 12) {
+      h = h - 12;
+    }
+    if (h == 0) {
+      h = 12;
+    }
     document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s + " " + ampm;
     setTimeout(startTime, 1000);
-  }
+    }
+
+
+
 
   function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
   }
   </script>
+
+
 
 
 
@@ -59,14 +94,8 @@
   <div class="earth"></div>
 
   <div class="center">
-    <script>
-    if ampm = "AM";
-      document.getElementById('txt1').innerHTML =  "Good Morning!";
-    if ampm = "PM"
-      document.getElementById('txt1').innerHTML =  "Good Afternoon!";
 
 
-    </script>
-    <p> </p>
+    <p id='txt1'> </p>
   </body>
 </html>
