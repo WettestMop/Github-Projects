@@ -1,15 +1,21 @@
-<html>1
+<html>
   <link rel="stylesheet"
   href="styles.css">
 
 
 
   <style>
+  label {
+      color: white;
+      }
   h1 {
     text-align: center;
     font-size: 70px;
     font-family: "Garamond";
   }
+  a {
+      font-family: "Playfair Display";
+      font-size: 20px; }
 
   p {
     text-align: center;
@@ -28,12 +34,31 @@
     background-repeat: no-repeat;
     background-size: cover;
    }
+
+
+  body {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
   </style>
   <body onload="startTime()">
 
 
 
 
+    <header>
+        <a href="login.html">Login</a>
+        <a href="https://github.com/WettestMop/Github-Projects">Github</a>
+      </header>
 
 
 
@@ -87,7 +112,9 @@
 
 
 
+
   <title>Webpage</title>
+
   <div class="centertitle">
     <h1 id='txt'> </h1>
   </div>
@@ -97,5 +124,12 @@
 
 
     <p id='txt1'> </p>
+      </div>
+
+
+
+
+
+
   </body>
 </html>
