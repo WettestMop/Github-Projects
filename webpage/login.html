@@ -24,18 +24,37 @@
       left: 50%;
       margin-left: -100px;
       margin-top: 90px;
-      
+
     }
-    
+
   </style>
+
+  <script>
+  function Submitform() {
+    const pass = require("test.json");
+    var formname = document.getElementById("usrname");
+    var formpass = document.getElementById("pass");
+
+      const userperson = {
+        name: formname
+        password: formpass
+      };
+      const jsonString = JSON.stringify(userperson);
+      console.log(jsonString);
+  }
+
+  </script>
+
   <body>
 
-    <form action="action_page.php" method="post">
+    <form name="LoginForm" onsubmit="return Submitform()" type="POST">
       <label for="usrname">Username</label><br>
       <input type="text" id="usrname" name="name"></input><br>
       <label for="pass">Password</label><br>
-      <input type="text" id="pass" name="email"></input><br>
+      <input type="password" id="pass" name="email"></input><br>
       <input type="submit" value="Submit">
     </form>
+
+
   </body>
 </html>
